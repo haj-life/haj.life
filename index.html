@@ -12,15 +12,31 @@
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
 <link rel=manifest href=/site.webmanifest>
 <title>Haj life</title>
-<style>body{font-family:'Monaco',monospace;color:white;background-color:black;margin-left:auto;margin-right:auto;text-align:center}a:link{color:green}a:visited{color:darkgreen}a:hover{color:hotpink}a:active{color:blue}.box{width:9px;height:100%;background:linear-gradient(to bottom,#2838c7 0,#5979ef 17%,#869ef3 32%,#869ef3 45%,#5979ef 59%,#2838c7 100%);display:inline-block;margin-right:2px;animation:loader 10s infinite;animation-timing-function:linear}.zz{position:fixed;top:50%;bottom:50%;left:0;right:0;width:150px;height:10px;border:2px solid #b2b2b2;border-radius:7px;margin:0 auto;padding:2px 1px;overflow:hidden;font-size:0}@keyframes loader{0%{transform:translate(-100px)}100%{transform:translate(150px)}}</style>
+<style>body{font-family:'Monaco',monospace;color:white;background-color:black;margin-left:auto;margin-right:auto;text-align:center}a:link{color:green}a:visited{color:darkgreen}a:hover{color:hotpink}a:active{color:blue}.box{width:9px;height:100%;background:linear-gradient(to bottom,#2838c7 0,#5979ef 17%,#869ef3 32%,#869ef3 45%,#5979ef 59%,#2838c7 100%);display:inline-block;margin-right:2px;animation:loader 10s infinite;animation-timing-function:linear}.zz{position:fixed;top:50%;bottom:50%;left:0;right:0;width:150px;height:10px;border:2px solid #b2b2b2;border-radius:7px;margin:0 auto;padding:2px 1px;overflow:hidden;font-size:0}@keyframes loader{0%{transform:translate(-100px)}100%{transform:translate(150px)}}#b{position: absolute;}</style>
 </head>
 <body>
-<a href="https://ez.lol"><img src="z.gif"></a>
+<div id=b><a href="https://ez.lol"><img src="z.gif"></a></div>
 <div class=zz>
 <div class=box></div>
 <div class=box></div>
 <div class=box></div>
 </div>
+<script>
+let b=document.getElementById("b"),x=1,maxX=innerWidth-b.offsetWidth,a=0;
+setInterval(()=>{
+let l=b.offsetLeft+x;
+if(l>maxX||l<0)x=-x;
+b.style.left=l+"px";
+b.style.transform="rotate("+(a+=2)+"deg)";},50);
+</script>
+<div id="cursor-chat-layer">
+<input type="text" id="cursor-chat-box">
+</div>
+<script type="module">
+import { initCursorChat } from 'https://esm.sh/cursor-chat'
+initCursorChat("haj")
+</script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/cursor-chat/dist/style.css"/>
 <script src=https://form.jotform.com/cardforms/feedbackEmbedButton.min.js></script> <script>new JF_FeedbackEmbedButton({buttonText:"53",buttonFontColor:"#FFFFFF",buttonBackgroundColor:"#08036b",buttonSide:"Bottom",buttonAlign:"Right",buttonIcon:"envelope",base:"https://form.jotform.com/",formId:210384987501358});</script>
 </body>
 </html>
